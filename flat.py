@@ -11,3 +11,13 @@ class Flat:
     
     def pretty(self):
         return "Id: {}\nUrl: {}\nTitulo: {}\nDescripcion: {}".format(self.id,self.url,self.titulo,self.descripcion)
+
+    def __hash__(self):
+        return hash(self.id)
+    def __eq__(self,other):
+        if isinstance(other, Flat):
+            return self.id == other.id
+        return False
+
+    def __str__(self) -> str:
+        return "[{}] {} Precio: {}".format(self.id,self.titulo,self.precio)
