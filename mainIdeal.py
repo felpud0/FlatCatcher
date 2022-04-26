@@ -32,7 +32,7 @@ def comprobarNuevos(sc):
     page = r.get(URL, headers=headers)
     soup = BeautifulSoup(page.text, "html.parser")
     #Asi buscamos los de inmobiliaria
-    soup.find_all("article",class_="item  item_contains_branding item-multimedia-container")
+    #tarjetas = soup.find_all("article",class_="item  item_contains_branding item-multimedia-container")
     #Asi los de particulares.
     tarjetas = soup.find_all("article",class_="item item-multimedia-container")
     listaActual = parsearTarjetas(tarjetas)
