@@ -56,7 +56,7 @@ def parsearTarjetas(tarjetas):
     for t in tarjetas:
         link = t.find("a",href=True)['href']
         tit=t.find("a",class_="item-link").text
-        desc=t.find("p",class_="ellipsis").text.strip()
+        desc= ""#t.find("p",class_="ellipsis").text.strip()
         precio= t.find("span",class_="item-price h2-simulated").text
 
         piso = Flat(link,link,tit,desc,precio)
